@@ -5,7 +5,7 @@ Proof of Publication defines a protocol for timestamping and proving ownership o
 
 ### Problems with existing notary services
 
-There exist problems with the methodology of current notary services. You can find them [here].
+There are many problems with the methods implemented by existing notary services. You can find them [here].
 
 ## Solution
 
@@ -14,18 +14,18 @@ The Proof of Publication approach abandons the unscalable, expensive 1:1 relatio
 
 ### Proof of Publication
 
-Proof of Publication defines a protocol based on a merkle tree. Documents submitted to any Proof of Publication node are hashed, and that hash is added to a merkle tree. That markle tree root is published to the blockchain, and the original data of the merkle tree is saved on both the Proof of Publication provider's server and the user's computer. 
+Proof of Publication defines a protocol based on a merkle tree. The client process hashes documents and adds each hash as a leaf in a merkle tree. The program publishes the merkle tree root to the block chain, saving the original data of the merkle tree in a local file. 
 
-The cost of notarizing one document is the same as the cost of notarizing N documents. These savings can be transferred to the user, or paid towards miners for a higher priority transaction.
+The cost of notarizing one document is the same as the cost of notarizing N documents. These savings are transferred to the user, or paid towards miners for a higher priority transaction.
 
 
 ### Providers
 
-Proof of Publication is provided as a web service to users. Each Proof of Publication web service is known as a Provider. Providers should store data for users and handle the heavy-lifting. It is not necessary for advanced users to rely on a Provider, as Proof of Publication can be built from source and run clientside. 
+Providers offer a Proof of Publication web service. Each Proof of Publication web service is known as a Provider. Providers should store original merkle tree data for users and handle the heavy-lifting, and ideally display a simple and easy to use interface. Providers fill a need in the market for "quick and easy" notary services, eliminating learning and setup times by acting as trusted service providers.
 
 ### Authentication
 
-Authentication of documents via digital signature is possible within this protocol. Signatures are stored on the block chain alongside the merkle root of a document. Unauthenticated data can be lumped together in a merkle tree with all other unauthenticated data. 
+Authentication of documents via digital signature is possible within this protocol. Publishers store the merkle root of all hashed documents and a signature (proving authenticity) on the block chain. Publishers lump all unauthenticated data together in a single merkle tree to save time, space, and money.
 
 ### License
 
